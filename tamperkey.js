@@ -49,23 +49,21 @@ function createAnchorElemnt(href) {
 
 function crateUnorderedList(tag) {
     var ul = document.createElement("ul");
-    ul.id = `#{tag}`;
-    var a = creatLink(tag);
+    var a = creatLink(tag, tag.toLowerCase().replace(' ', '-'));
     ul.appendChild(a);
-    ul.style="list-style-type:square";
+    ul.style="list-style-type:square;font-weight: bold;";
     return ul;
 }
 
 function createListItem(tag) {
     var li = document.createElement("li");
-    li.id = `#{tag}`;
-    var a = creatLink(tag);
+    var a = creatLink(tag, tag);
     li.appendChild(a);
-    li.style="padding:10px;color:grey;";
+    li.style="padding-left:10px;color:grey;";
     return li;
 }
 
-function creatLink(href) {
+function creatLink(tag, href) {
     var a = document.createElement("a");
     a.href = `#${href}`;
     a.innerText = href;
